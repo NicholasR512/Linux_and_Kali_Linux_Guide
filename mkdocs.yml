@@ -1,0 +1,49 @@
+site_name: Linux & Kali Linux Guide
+site_url: http://localhost:8000
+theme:
+  name: material
+  palette:
+    - scheme: slate          # dark theme
+      primary: deep purple   # purple main accent
+      accent: teal           # teal secondary accent
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - toc.integrated
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+
+plugins:
+  - search
+  - awesome-pages    # optional: filesystem-based nav with .pages files
+  - roamlinks_extra
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index:     !!python/name:materialx.emoji.twemoji
+
+
+
+
+# Optional: hide folders/files you don’t want published
+# (MkDocs already ignores .obsidian, but here’s how to be explicit)
+# exclude_docs: |
+#   .obsidian/**
+#   Private/**
