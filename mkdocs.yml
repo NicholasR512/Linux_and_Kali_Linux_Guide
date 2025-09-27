@@ -1,5 +1,5 @@
 site_name: Linux & Kali Linux Guide
-site_url: http://localhost:8000
+site_url: https://nicholasr512.github.io/Linux_and_Kali_Linux_Guide/
 theme:
   name: material
   palette:
