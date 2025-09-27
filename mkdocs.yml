@@ -39,10 +39,14 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
       emoji_index:     !!python/name:materialx.emoji.twemoji
 
+extra_javascript:
+  - https://www.googletagmanager.com/gtag/js?id=G-4QEE9BMEP8
+
 extra:
-  google_analytics:
-    - G-4QEE9BMEP8
-    - auto
+  analytics:
+    provider: google
+    property: G-4QEE9BMEP8
+
 
 
 
