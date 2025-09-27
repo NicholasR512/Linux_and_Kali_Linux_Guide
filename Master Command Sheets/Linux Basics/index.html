@@ -1,0 +1,3433 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://localhost:8000/Master%20Command%20Sheets/Linux%20Basics/">
+      
+      
+        <link rel="prev" href="../Kali%20Tools/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Linux Basics - Linux & Kali Linux Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#01-file-navigation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Linux &amp; Kali Linux Guide" class="md-header__button md-logo" aria-label="Linux & Kali Linux Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linux & Kali Linux Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Linux &amp; Kali Linux Guide" class="md-nav__button md-logo" aria-label="Linux & Kali Linux Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linux & Kali Linux Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Kali Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Kali Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    00   Introduction
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            00   Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/00%20-%20Introduction/Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/00%20-%20Introduction/Warning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Warning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01   Information Gathering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            01   Information Gathering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/01%20-%20Information%20Gathering/DNSenum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNSenum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/01%20-%20Information%20Gathering/Gobuster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gobuster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/01%20-%20Information%20Gathering/Nmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/01%20-%20Information%20Gathering/Recon-ng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recon ng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/01%20-%20Information%20Gathering/WHOIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WHOIS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/01%20-%20Information%20Gathering/WhatWeb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WhatWeb
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02   Vulnerability Analysis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            02   Vulnerability Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/02%20-%20Vulnerability%20Analysis/Lynis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lynis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/02%20-%20Vulnerability%20Analysis/Nikto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nikto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/02%20-%20Vulnerability%20Analysis/OpenVas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenVas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/02%20-%20Vulnerability%20Analysis/WPScan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WPScan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    03   Web Explotation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            03   Web Explotation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/03%20-%20Web%20Explotation/Burp%20Suite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Burp Suite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/03%20-%20Web%20Explotation/Commix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/03%20-%20Web%20Explotation/SQLmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQLmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/03%20-%20Web%20Explotation/ZAProxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZAProxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    04   Password Attacks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            04   Password Attacks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/04%20-%20Password%20Attacks/Cewl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cewl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/04%20-%20Password%20Attacks/Hashcat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hashcat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/04%20-%20Password%20Attacks/Hydra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hydra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/04%20-%20Password%20Attacks/John/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    John
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/04%20-%20Password%20Attacks/Medusa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Medusa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    05   Wireless Attacks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            05   Wireless Attacks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/05%20-%20Wireless%20Attacks/Aircrack-ng/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aircrack ng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/05%20-%20Wireless%20Attacks/Kismet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kismet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/05%20-%20Wireless%20Attacks/Reaver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reaver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/05%20-%20Wireless%20Attacks/Wifite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wifite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    06   Reverse Engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            06   Reverse Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/06%20-%20Reverse%20Engineering/Edb-debugger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Edb debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/06%20-%20Reverse%20Engineering/Gdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gdb
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/06%20-%20Reverse%20Engineering/Jadx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jadx
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/06%20-%20Reverse%20Engineering/Radare2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Radare2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    07   Exploitation Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            07   Exploitation Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/07%20-%20Exploitation%20Tools/Beef-xss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Beef xss
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/07%20-%20Exploitation%20Tools/Metasploit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metasploit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/07%20-%20Exploitation%20Tools/Msfvenom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Msfvenom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/07%20-%20Exploitation%20Tools/Searchsploit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Searchsploit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    08   Sniffing and Spoofing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            08   Sniffing and Spoofing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/08%20-%20Sniffing%20and%20Spoofing/Bettercap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bettercap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/08%20-%20Sniffing%20and%20Spoofing/Ettercap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ettercap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/08%20-%20Sniffing%20and%20Spoofing/TCPdump/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCPdump
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/08%20-%20Sniffing%20and%20Spoofing/Wireshark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wireshark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    09   Maintaining Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            09   Maintaining Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/09%20-%20Maintaining%20Access/Netcat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Netcat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/09%20-%20Maintaining%20Access/SSH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/09%20-%20Maintaining%20Access/Socat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Socat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    10   Digital Forensics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            10   Digital Forensics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/10%20-%20Digital%20Forensics/Autopsy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autopsy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/10%20-%20Digital%20Forensics/Binwalk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binwalk
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/10%20-%20Digital%20Forensics/Sleuthkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sleuthkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/10%20-%20Digital%20Forensics/Volatility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Volatility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    11   Reporting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            11   Reporting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/11%20-%20Reporting/Dradis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dradis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/11%20-%20Reporting/Faraday/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Faraday
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/11%20-%20Reporting/Maltego/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maltego
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    12   Other
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            12   Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/12%20-%20Other/Exiftool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exiftool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/12%20-%20Other/Steghide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Steghide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/12%20-%20Other/Stegseek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stegseek
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kali%20Tools/12%20-%20Other/Strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux Basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/00%20-%20Introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    00   Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/01%20-%20File%20Navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01   File Navigation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/02%20-%20Hidden%20Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02   Hidden Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/03%20-%20File%20Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03   File Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/04%20-%20Viewing%20Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04   Viewing Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/05%20-%20Searching%20Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    05   Searching Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/06%20-%20File%20Permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    06   File Permissions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/07%20-%20Users%20and%20Groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    07   Users and Groups
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/08%20-%20Processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    08   Processes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/09%20-%20System%20Info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    09   System Info
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/10%20-%20Networking%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10   Networking Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/11%20-%20Archives%20and%20Compression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11   Archives and Compression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/12%20-%20Editors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12   Editors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/13%20-%20Scripting%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13   Scripting Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/14%20-%20Environment%20Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14   Environment Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/15%20-%20Symbolic%20Links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15   Symbolic Links
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/16%20-%20Package%20Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16   Package Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/17%20-%20Logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17   Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/18%20-%20Redirection%20%26%20Pipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    18   Redirection & Pipes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/19%20-%20Wildcards%20%26%20Globbing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    19   Wildcards & Globbing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/20%20-%20Cron%20Jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    20   Cron Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/21%20-%20SSH%20Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    21   SSH Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux%20Basics/22%20-%20Services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    22   Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Master Command Sheets
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Master Command Sheets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kali%20Tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kali Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Linux Basics
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux Basics
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#01-file-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      01 - File Navigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-hidden-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      02 - Hidden Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-file-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      03 - File Operations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-viewing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      04 - Viewing Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-searching-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      05 - Searching Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      06 - File Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-users-and-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      07 - Users and Groups
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      08 - Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09-system-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      09 - System Info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-networking-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      10 - Networking Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-archives-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      11 - Archives and Compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-editors" class="md-nav__link">
+    <span class="md-ellipsis">
+      12 - Editors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-scripting-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      13 - Scripting Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      14 - Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-symbolic-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      15 - Symbolic Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-package-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      16 - Package Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      17 - Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-redirection-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      18 - Redirection &amp; Pipes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-wildcards-globbing" class="md-nav__link">
+    <span class="md-ellipsis">
+      19 - Wildcards &amp; Globbing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-cron-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      20 - Cron Jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-ssh-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      21 - SSH Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      22 - Services
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#01-file-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      01 - File Navigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-hidden-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      02 - Hidden Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-file-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      03 - File Operations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-viewing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      04 - Viewing Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-searching-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      05 - Searching Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      06 - File Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-users-and-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      07 - Users and Groups
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      08 - Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09-system-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      09 - System Info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-networking-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      10 - Networking Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-archives-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      11 - Archives and Compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-editors" class="md-nav__link">
+    <span class="md-ellipsis">
+      12 - Editors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-scripting-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      13 - Scripting Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      14 - Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-symbolic-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      15 - Symbolic Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-package-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      16 - Package Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      17 - Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-redirection-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      18 - Redirection &amp; Pipes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-wildcards-globbing" class="md-nav__link">
+    <span class="md-ellipsis">
+      19 - Wildcards &amp; Globbing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-cron-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      20 - Cron Jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-ssh-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      21 - SSH Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      22 - Services
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Linux Basics</h1>
+
+<h4 id="01-file-navigation"><a href="../../Linux%20Basics/01%20-%20File%20Navigation/">01 - File Navigation</a><a class="headerlink" href="#01-file-navigation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ pwd</code> -&gt; prints current path</li>
+<li><code>$ ls</code> -&gt; prints non-hidden directory contents</li>
+<li><code>$ ls -l</code> -&gt; prints non-hidden directory contents + more info</li>
+<li><code>$ cd &lt;dir name&gt;</code> -&gt; changes current directory to <code>&lt;dir name&gt;</code></li>
+<li><code>$ cd ..</code> -&gt; changes current directory to one directory higher</li>
+<li><code>$ cd ~</code> -&gt; changes current directory to home directory</li>
+</ul>
+<h4 id="02-hidden-files"><a href="../../Linux%20Basics/02%20-%20Hidden%20Files/">02 - Hidden Files</a><a class="headerlink" href="#02-hidden-files" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ ls -a</code> -&gt; prints non-hidden and hidden directory contents</li>
+<li><code>$ ls -la</code> -&gt; prints non-hidden and hidden directory contents + more info</li>
+</ul>
+<h4 id="03-file-operations"><a href="../../Linux%20Basics/03%20-%20File%20Operations/">03 - File Operations</a><a class="headerlink" href="#03-file-operations" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ mkdir &lt;dir name&gt;</code> -&gt; creates directory <code>&lt;dir name&gt;</code></li>
+<li><code>$ touch &lt;file name&gt;</code> -&gt; creates file <code>&lt;file name&gt;</code></li>
+<li><code>$ mv &lt;file name&gt; &lt;new path&gt;</code> -&gt; moves file <code>&lt;file name&gt;</code> into <code>&lt;new path&gt;</code></li>
+<li><code>$ mv &lt;file name&gt; &lt;new file name&gt;</code> -&gt; renames file <code>&lt;file name&gt;</code> to <code>&lt;new file name&gt;</code></li>
+<li><code>$ cp &lt;file name&gt; &lt;copy name&gt;</code> -&gt; copies <code>&lt;file name&gt;</code> into <code>&lt;copy name&gt;</code> (same contents, 2 files now)</li>
+<li><code>$ cp -r &lt;dir name&gt; &lt;copy name&gt;</code> -&gt; copies directory <code>&lt;dir name&gt;</code> and its contents into <code>&lt;copy name&gt;</code></li>
+<li><code>$ rm &lt;file name&gt;</code> -&gt; deletes <code>&lt;file name&gt;</code></li>
+<li><code>$ rm -r &lt;dir name&gt;</code> -&gt; deletes directory <code>&lt;dir name&gt;</code> and its contents</li>
+<li><code>$ rmdir &lt;dir name&gt;</code> -&gt; deletes empty directory <code>&lt;dir name&gt;</code></li>
+</ul>
+<h4 id="04-viewing-files"><a href="../../Linux%20Basics/04%20-%20Viewing%20Files/">04 - Viewing Files</a><a class="headerlink" href="#04-viewing-files" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ cat &lt;file&gt;</code> -&gt; prints entire contents of <code>&lt;file&gt;</code></li>
+<li><code>$ less &lt;file&gt;</code> -&gt; opens <code>&lt;file&gt;</code> in scrollable pager (arrow keys, <code>q</code> to quit)</li>
+<li><code>$ head &lt;file&gt;</code> -&gt; prints first 10 lines of <code>&lt;file&gt;</code></li>
+<li><code>$ head -n &lt;num&gt; &lt;file&gt;</code> -&gt; prints first <code>&lt;num&gt;</code> lines of <code>&lt;file&gt;</code></li>
+<li><code>$ tail &lt;file&gt;</code> -&gt; prints last 10 lines of <code>&lt;file&gt;</code></li>
+<li><code>$ tail -n &lt;num&gt; &lt;file&gt;</code> -&gt; prints last <code>&lt;num&gt;</code> lines of <code>&lt;file&gt;</code></li>
+<li><code>$ tail -f &lt;file&gt;</code> -&gt; prints and follows changes in <code>&lt;file&gt;</code> in real time</li>
+</ul>
+<h4 id="05-searching-files"><a href="../../Linux%20Basics/05%20-%20Searching%20Files/">05 - Searching Files</a><a class="headerlink" href="#05-searching-files" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ find &lt;path&gt; -name &lt;pattern&gt;</code> -&gt; searches <code>&lt;path&gt;</code> for files matching <code>&lt;pattern&gt;</code></li>
+<li><code>$ find &lt;path&gt; -type f</code> -&gt; lists all files in <code>&lt;path&gt;</code></li>
+<li><code>$ find &lt;path&gt; -type d</code> -&gt; lists all directories in <code>&lt;path&gt;</code></li>
+<li><code>$ locate &lt;filename&gt;</code> -&gt; quickly finds paths containing <code>&lt;filename&gt;</code></li>
+<li><code>$ grep &lt;pattern&gt; &lt;file&gt;</code> -&gt; prints lines in <code>&lt;file&gt;</code> containing <code>&lt;pattern&gt;</code></li>
+<li><code>$ grep -r &lt;pattern&gt; &lt;dir&gt;</code> -&gt; searches all files in <code>&lt;dir&gt;</code> for <code>&lt;pattern&gt;</code></li>
+<li><code>$ grep -i &lt;pattern&gt; &lt;file&gt;</code> -&gt; searches <code>&lt;file&gt;</code> ignoring case</li>
+<li><code>$ which &lt;command&gt;</code> -&gt; shows path of <code>&lt;command&gt;</code> if installed</li>
+<li><code>$ whereis &lt;command&gt;</code> -&gt; shows all locations of <code>&lt;command&gt;</code> (binary, source, man page)</li>
+</ul>
+<h4 id="06-file-permissions"><a href="../../Linux%20Basics/06%20-%20File%20Permissions/">06 - File Permissions</a><a class="headerlink" href="#06-file-permissions" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ ls -l</code> -&gt; shows permissions, owner, group, and file info</li>
+<li><code>$ chmod &lt;mode&gt; &lt;file&gt;</code> -&gt; changes file permissions (e.g., <code>755</code> or <code>+x</code>)</li>
+<li><code>$ chown &lt;user&gt;:&lt;group&gt; &lt;file&gt;</code> -&gt; changes ownership of file</li>
+<li><code>$ groups</code> -&gt; shows groups the current user belongs to</li>
+<li><code>$ umask</code> -&gt; shows default permission mask for new files</li>
+</ul>
+<h4 id="07-users-and-groups"><a href="../../Linux%20Basics/07%20-%20Users%20and%20Groups/">07 - Users and Groups</a><a class="headerlink" href="#07-users-and-groups" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ whoami</code> -&gt; prints current logged-in user</li>
+<li><code>$ id</code> -&gt; shows user ID, group ID, and memberships</li>
+<li><code>$ su &lt;user&gt;</code> -&gt; switch to another user account</li>
+<li><code>$ sudo &lt;command&gt;</code> -&gt; run command with root privileges</li>
+<li><code>$ adduser &lt;username&gt;</code> -&gt; create new user</li>
+<li><code>$ cat /etc/passwd</code> -&gt; shows user account info</li>
+</ul>
+<h4 id="08-processes"><a href="../../Linux%20Basics/08%20-%20Processes/">08 - Processes</a><a class="headerlink" href="#08-processes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ ps</code> -&gt; shows running processes for current shell</li>
+<li><code>$ ps aux</code> -&gt; shows all running processes with details</li>
+<li><code>$ top</code> -&gt; real-time interactive process monitor</li>
+<li><code>$ htop</code> -&gt; user-friendly interactive process monitor</li>
+<li><code>$ kill &lt;PID&gt;</code> -&gt; kills process with given PID</li>
+<li><code>$ jobs</code> -&gt; lists background jobs in shell</li>
+<li><code>&lt;command&gt; &amp;</code> -&gt; runs command in background</li>
+<li><code>$ fg %&lt;job&gt;</code> -&gt; brings background job to foreground</li>
+<li><code>$ bg %&lt;job&gt;</code> -&gt; resumes job in background</li>
+</ul>
+<h4 id="09-system-info"><a href="../../Linux%20Basics/09%20-%20System%20Info/">09 - System Info</a><a class="headerlink" href="#09-system-info" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ uname -a</code> -&gt; prints kernel name, version, machine, and system info</li>
+<li><code>$ hostname</code> -&gt; prints the system’s hostname</li>
+<li><code>$ uptime</code> -&gt; shows system uptime, logged-in users, and load averages</li>
+<li><code>$ df -h</code> -&gt; shows disk space usage (human-readable)</li>
+<li><code>$ free -m</code> -&gt; shows memory usage in MB</li>
+</ul>
+<h4 id="10-networking-basics"><a href="../../Linux%20Basics/10%20-%20Networking%20Basics/">10 - Networking Basics</a><a class="headerlink" href="#10-networking-basics" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ ifconfig</code> -&gt; shows network interfaces and IP addresses (legacy)</li>
+<li><code>$ ip a</code> -&gt; shows network interfaces and IP addresses (modern)</li>
+<li><code>$ ping &lt;host&gt;</code> -&gt; tests connectivity to <code>&lt;host&gt;</code></li>
+<li><code>$ netstat -tuln</code> -&gt; shows active connections and listening ports (deprecated)</li>
+<li><code>$ ss -tuln</code> -&gt; shows active connections and listening ports (modern)</li>
+<li><code>$ curl &lt;url&gt;</code> -&gt; fetches and displays contents from <code>&lt;url&gt;</code></li>
+<li><code>$ wget &lt;url&gt;</code> -&gt; downloads file(s) from <code>&lt;url&gt;</code></li>
+</ul>
+<h4 id="11-archives-and-compression"><a href="../../Linux%20Basics/11%20-%20Archives%20and%20Compression/">11 - Archives and Compression</a><a class="headerlink" href="#11-archives-and-compression" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ tar -cvf &lt;archive.tar&gt; &lt;files&gt;</code> -&gt; create tar archive</li>
+<li><code>$ tar -xvf &lt;archive.tar&gt;</code> -&gt; extract tar archive</li>
+<li><code>$ tar -czvf &lt;archive.tar.gz&gt; &lt;files&gt;</code> -&gt; create compressed tar.gz archive</li>
+<li><code>$ tar -xzvf &lt;archive.tar.gz&gt;</code> -&gt; extract tar.gz archive</li>
+<li><code>$ gzip &lt;file&gt;</code> -&gt; compress file into .gz</li>
+<li><code>$ gunzip &lt;file.gz&gt;</code> -&gt; decompress .gz file</li>
+<li><code>$ zip &lt;archive.zip&gt; &lt;files&gt;</code> -&gt; create zip archive</li>
+<li><code>$ unzip &lt;archive.zip&gt;</code> -&gt; extract zip archive</li>
+</ul>
+<h4 id="12-editors"><a href="../../Linux%20Basics/12%20-%20Editors/">12 - Editors</a><a class="headerlink" href="#12-editors" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ nano &lt;file&gt;</code> -&gt; open file in nano editor</li>
+<li><code>$ vim &lt;file&gt;</code> -&gt; open file in vim editor</li>
+<li><code>$ gedit &lt;file&gt;</code> -&gt; open file in gedit GUI editor</li>
+</ul>
+<h4 id="13-scripting-basics"><a href="../../Linux%20Basics/13%20-%20Scripting%20Basics/">13 - Scripting Basics</a><a class="headerlink" href="#13-scripting-basics" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>#!/bin/bash</code> -&gt; shebang to define shell for script</li>
+<li><code>$ nano &lt;script.sh&gt;</code> -&gt; create/edit script file</li>
+<li><code>$ chmod +x &lt;script.sh&gt;</code> -&gt; make script executable</li>
+<li><code>$ ./&lt;script.sh&gt;</code> -&gt; run script</li>
+</ul>
+<h4 id="14-environment-variables"><a href="../../Linux%20Basics/14%20-%20Environment%20Variables/">14 - Environment Variables</a><a class="headerlink" href="#14-environment-variables" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ echo $PATH</code> -&gt; prints PATH variable</li>
+<li><code>$ export &lt;VAR&gt;=&lt;value&gt;</code> -&gt; sets environment variable for session</li>
+<li><code>$ echo $VAR</code> -&gt; prints value of variable</li>
+<li><code>$ nano ~/.bashrc</code> -&gt; edit bashrc to make variables permanent</li>
+</ul>
+<h4 id="15-symbolic-links"><a href="../../Linux%20Basics/15%20-%20Symbolic%20Links/">15 - Symbolic Links</a><a class="headerlink" href="#15-symbolic-links" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ ln -s &lt;target&gt; &lt;link&gt;</code> -&gt; create symbolic link to target</li>
+<li><code>$ ls -l</code> -&gt; shows symlinks and their targets</li>
+<li><code>$ cat &lt;symlink&gt;</code> -&gt; follows symlink and prints target contents</li>
+</ul>
+<h4 id="16-package-management"><a href="../../Linux%20Basics/16%20-%20Package%20Management/">16 - Package Management</a><a class="headerlink" href="#16-package-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ sudo apt update</code> -&gt; update package list</li>
+<li><code>$ sudo apt upgrade</code> -&gt; upgrade installed packages</li>
+<li><code>$ sudo apt install &lt;pkg&gt;</code> -&gt; install package</li>
+<li><code>$ sudo apt remove &lt;pkg&gt;</code> -&gt; remove package</li>
+<li><code>$ dpkg -i &lt;file.deb&gt;</code> -&gt; install from local .deb file</li>
+<li><code>$ apt-cache search &lt;term&gt;</code> -&gt; search package repositories</li>
+</ul>
+<h4 id="17-logging"><a href="../../Linux%20Basics/17%20-%20Logging/">17 - Logging</a><a class="headerlink" href="#17-logging" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>/var/log/</code> -&gt; main system log directory</li>
+<li><code>$ cat /var/log/auth.log</code> -&gt; view authentication logs</li>
+<li><code>$ tail -f /var/log/syslog</code> -&gt; follow system log in real time</li>
+<li><code>$ dmesg</code> -&gt; view kernel messages</li>
+</ul>
+<h4 id="18-redirection-pipes"><a href="../../Linux%20Basics/18%20-%20Redirection%20%26%20Pipes/">18 - Redirection &amp; Pipes</a><a class="headerlink" href="#18-redirection-pipes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>&gt; &lt;file&gt;</code> -&gt; overwrite file with command output</li>
+<li><code>&gt;&gt; &lt;file&gt;</code> -&gt; append command output to file</li>
+<li><code>&lt; &lt;file&gt;</code> -&gt; use file as input to command</li>
+<li><code>&lt;cmd1&gt; | &lt;cmd2&gt;</code> -&gt; pipe output of cmd1 into cmd2</li>
+</ul>
+<h4 id="19-wildcards-globbing"><a href="../../Linux%20Basics/19%20-%20Wildcards%20%26%20Globbing/">19 - Wildcards &amp; Globbing</a><a class="headerlink" href="#19-wildcards-globbing" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>*</code> -&gt; matches zero or more characters</li>
+<li><code>?</code> -&gt; matches exactly one character</li>
+<li><code>[abc]</code> -&gt; matches one character in set</li>
+</ul>
+<h4 id="20-cron-jobs"><a href="../../Linux%20Basics/20%20-%20Cron%20Jobs/">20 - Cron Jobs</a><a class="headerlink" href="#20-cron-jobs" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ crontab -l</code> -&gt; list cron jobs</li>
+<li><code>$ crontab -e</code> -&gt; edit cron jobs</li>
+<li><code>0 0 * * * &lt;cmd&gt;</code> -&gt; run command every day at midnight</li>
+<li><code>$ systemctl status cron</code> -&gt; check cron service</li>
+</ul>
+<h4 id="21-ssh-basics"><a href="../../Linux%20Basics/21%20-%20SSH%20Basics/">21 - SSH Basics</a><a class="headerlink" href="#21-ssh-basics" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ ssh user@host</code> -&gt; connect to host as user</li>
+<li><code>$ ssh -p &lt;port&gt; user@host</code> -&gt; connect with custom port</li>
+<li><code>$ ssh -i &lt;key&gt; user@host</code> -&gt; connect with SSH key</li>
+<li><code>$ scp &lt;file&gt; user@host:/path&gt;</code> -&gt; copy file to remote host</li>
+</ul>
+<h4 id="22-services"><a href="../../Linux%20Basics/22%20-%20Services/">22 - Services</a><a class="headerlink" href="#22-services" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$ systemctl status &lt;service&gt;</code> -&gt; check service status</li>
+<li><code>$ systemctl start &lt;service&gt;</code> -&gt; start service</li>
+<li><code>$ systemctl stop &lt;service&gt;</code> -&gt; stop service</li>
+<li><code>$ systemctl enable &lt;service&gt;</code> -&gt; enable service at boot</li>
+<li><code>$ service &lt;service&gt; restart</code> -&gt; restart service (legacy)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "search.suggest", "search.highlight", "toc.integrated"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
